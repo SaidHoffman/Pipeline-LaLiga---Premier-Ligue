@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_standings
+    description: "Datos de standings limpios y estructurados. Capa Silver."
+    columns:
+      - name: team_id
+        description: "ID unico del equipo"
+        tests:
+          - not_null
+          - unique
+
+      - name: position
+        description: "Posicion en la tabla"
+        tests:
+          - not_null
+
+      - name: points
+        description: "Puntos totales"
+        tests:
+          - not_null
+
+      - name: competition_code
+        description: "Codigo de la competicion"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PL', 'PD', 'CL', 'BL1', 'SA', 'FL1']
+
+      - name: played_games
+        description: "Partidos jugados"
+        tests:
+          - not_null

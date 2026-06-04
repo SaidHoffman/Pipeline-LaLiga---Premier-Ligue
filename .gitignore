@@ -1,0 +1,30 @@
+# Credenciales y secretos
+.env
+credentials/
+
+# Entorno virtual
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs
+logs/
+*.log
+
+# dbt
+dbt/football/target/
+dbt/football/logs/
+dbt/football/.user.yml
+
+# Airflow
+airflow.cfg
+airflow.db
+
+# OS
+.DS_Store

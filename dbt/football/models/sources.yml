@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: football_raw
+    description: "Datos brutos de la API de futbol. Capa Bronze en BigQuery."
+    database: football-pipeline-498403
+    schema: football_raw
+    tables:
+      - name: standings
+        description: "Tabla de posiciones de las ligas"
+      - name: matches
+        description: "Partidos de las ligas"
