@@ -11,9 +11,10 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/credentials/application_default_credentials.json
-    FOOTBALL_API_KEY: 'a9ecd002f77f45cf8f34ba147900bbf4'
-    GCS_BUCKET: 'football-pipeline-raw'
-    GCP_PROJECT_ID: 'football-pipeline-498403'
+    # Se leen del archivo .env (ver .env.example); la API key nunca se sube al repo
+    FOOTBALL_API_KEY: ${FOOTBALL_API_KEY}
+    GCS_BUCKET: ${GCS_BUCKET:-football-pipeline-raw}
+    GCP_PROJECT_ID: ${GCP_PROJECT_ID}
   volumes:
     - ./dags:/opt/airflow/dags
     - ./data:/opt/airflow/data
